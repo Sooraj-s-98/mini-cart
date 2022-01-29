@@ -11,9 +11,7 @@ const CartProducts = () => {
 
                 {
                     cartItems.map(product => <CartItem key={product.id} product={product}/>)
-                }
-
-            </div>
+                }            </div>
         </div>
 
    );

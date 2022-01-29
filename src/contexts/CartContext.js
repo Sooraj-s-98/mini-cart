@@ -1,5 +1,6 @@
-import React, { createContext, useReducer } from 'react';
+import React, { createContext, useReducer, useEffect } from 'react';
 import { CartReducer, sumItems } from './CartReducer';
+import axios from 'axios'
 
 export const CartContext = createContext()
 
@@ -10,6 +11,26 @@ const CartContextProvider = ({children}) => {
 
     const [state, dispatch] = useReducer(CartReducer, initialState)
 
+useEffect(()=> {
+    if(localStorage.getItem('first_load')===null){
+    getCartList();
+    }
+},[]
+)
+
+const getCartList=async()=>{
+    
+  const response= await axios.get("http://dnc0cmt2n557n.cloudfront.net/products.json");
+  if(response.status===200){
+    initial(response.data.products)
+    console.log("response",response.data)
+    localStorage.setItem('first_load',"true")
+  }
+}
+const initial = payload => {
+    dispatch({type: 'INITIAL_ITEMS', payload})
+    console.log("response payload",payload)
+}
     const increase = payload => {
         dispatch({type: 'INCREASE', payload})
     }
