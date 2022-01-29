@@ -1,9 +1,10 @@
 import React from 'react';
-import Layout from '../../components/Layout';
-import CartProducts from './CartProducts';
-import { formatNumber } from '../../helpers/utils';
 import { Link } from 'react-router-dom';
+
+import CartProducts from './CartProducts';
+import Layout from '../../components/Layout';
 import { useCart } from '../../hooks/useCart';
+import { formatNumber } from '../../helpers/utils';
 
 const Cart = () => {
 
