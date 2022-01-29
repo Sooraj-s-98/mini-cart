@@ -4,7 +4,11 @@ import { CartContext } from '../../contexts/CartContext';
 
 const ProductItem = ({product}) => {
 
-    const { addProduct, isInCart } = useContext(CartContext);
+    const { addProduct, cartItems, increase } = useContext(CartContext);
+
+    const isInCart = product => {
+        return !!cartItems.find(item => item.id === product.id);
+    }
 
     return ( 
         <div className="card card-body">
@@ -18,7 +22,7 @@ const ProductItem = ({product}) => {
                 {
                     isInCart(product) && 
                     <button 
-                    onClick={() => addProduct(product)}
+                    onClick={() => increase(product)}
                     className="btn btn-outline-primary btn-sm">Add more</button>
                 }
 

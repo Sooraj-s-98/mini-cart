@@ -4,12 +4,12 @@ import styles from './header.module.scss';
 import { CartContext } from '../../contexts/CartContext';
 
 const Header = () => {
-    const {totalItems,total} = useContext(CartContext);
+    const {itemCount,total} = useContext(CartContext);
     return ( 
         <header className={styles.header}>
             <Link to='/'>Store</Link>
             <Link to='/about'>About</Link>
-            <Link to='/cart'><div className="d-flex flex-column "><span>${total}</span> <span>Items{" "}{totalItems}</span></div></Link>
+            <Link to='/cart'><div className="d-flex flex-column "><span>${total}</span> <span>Items{" "}{itemCount}</span></div></Link>
         </header>
      );
 }

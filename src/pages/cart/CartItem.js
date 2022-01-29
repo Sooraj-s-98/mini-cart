@@ -22,7 +22,7 @@ const CartItem = ({product}) => {
             </div>
             <div className="col-sm-3 text-right">
                  <button 
-                      onClick={() => increase(product.id)}
+                      onClick={() => increase(product)}
                   className="btn btn-light btn-ripple btn-sm mr-2">
                            <PlusCircleIcon width={"20px"}/>
                   </button>
@@ -30,7 +30,7 @@ const CartItem = ({product}) => {
                  <button
                   onClick={() =>{
                       if(product.quantity > 1 ){
-                       decrease(product.id)
+                       decrease(product)
                       }
                       else if(product.quantity === 1){
                         removeProduct(product)
