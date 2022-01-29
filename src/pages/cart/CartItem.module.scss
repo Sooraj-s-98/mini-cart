@@ -1,0 +1,41 @@
+.lineClamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+  }
+
+  .itemBorder{
+    border-bottom: solid;
+    border-bottom-color: #b3aeae;
+    border-bottom-width: 2px;
+  }
+
+  .countBox{
+        width: 40px;
+        height: 40px;
+        padding: 2px;
+        border: 1px solid #b3aeae;
+  }
+
+  .ripple {
+    background-position: center;
+    transition: background 0.8s;
+    border: none;
+    border-radius: 2px;
+    padding: 0px 0px 0px opx;
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #b3aeae;
+    box-shadow: 0 0 4px #fdfafa;
+    outline: none;
+  }
+  .ripple:hover {
+    background: #bbbec2 radial-gradient(circle, transparent 1%, #dbdfe4c2 1%) center/15000%;
+  }
+  .ripple:active {
+    background-color: #f2f6f8;
+    background-size: 100%;
+    transition: background 0s;
+  }
