@@ -1,14 +1,13 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Layout from '../../components/Layout';
-
 import CartProducts from './CartProducts';
-import { CartContext } from '../../contexts/CartContext';
 import { formatNumber } from '../../helpers/utils';
 import { Link } from 'react-router-dom';
+import { useCart } from '../../hooks/useCart';
 
 const Cart = () => {
 
-    const { total, cartItems, itemCount, clearCart, checkout, handleCheckout } = useContext(CartContext);
+    const { total, cartItems, itemCount, clearCart, checkout, handleCheckout } = useCart();
     
     return ( 
         <Layout title="Cart" description="This is the Cart page" >
