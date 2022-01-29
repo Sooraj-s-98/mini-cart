@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../../contexts/CartContext';
+import { PlusCircleIcon, MinusCircleIcon, TrashIcon } from '../../components/icons'
 
 
 const CartItem = ({product}) => {
@@ -23,7 +24,7 @@ const CartItem = ({product}) => {
                  <button 
                       onClick={() => increase(product.id)}
                   className="btn btn-light btn-ripple btn-sm mr-2">
-                      +
+                           <PlusCircleIcon width={"20px"}/>
                   </button>
                    <span className="p-1">{product.quantity}</span>
                  <button
@@ -36,7 +37,8 @@ const CartItem = ({product}) => {
                       }
                     }}
                   className="btn btn-light btn-ripple  btn-sm">
-                      -</button>
+                       -
+                      </button>
             </div>
         </div>
      );
