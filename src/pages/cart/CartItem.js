@@ -1,26 +1,42 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { CartContext } from '../../contexts/CartContext';
 
 
-const CartItem = () => {
+const CartItem = ({product}) => {
+    const { increase, decrease, removeProduct } = useContext(CartContext);
     return ( 
-        <div className="row no-gutters py-2">
-            <div className="col-sm-3">
+        <div key={product.name} className="row no-gutters py-2">
+            <div className="col-sm-3  p-2">
                 <img
                 alt="Ola"
                 style={{margin: "0 auto"}} 
-                src="http://placehold.it/150x80" className="img-fluid d-block"/>
+                src={product.photo} className="img-fluid d-block"/>
             </div>
-            <div className="col-sm-3">
-                <h4 className="mb-1">Product Title</h4>
-                <p className="mb-1">Price: $ 23222 </p>
+            <div className="col-sm-3 p-2">
+                <h5 className="mb-1">{product.name}</h5>
+                <p className="mb-1">Price: $ {product.price} </p>
                 
             </div>
             <div className="col-sm-3">
             </div>
             <div className="col-sm-3 text-right">
-                 <button className="btn btn-light btn-ripple btn-sm mr-2">+</button>
-                   <span className="p-1">2</span>
-                 <button className="btn btn-light btn-ripple  btn-sm">-</button>
+                 <button 
+                      onClick={() => increase(product.id)}
+                  className="btn btn-light btn-ripple btn-sm mr-2">
+                      +
+                  </button>
+                   <span className="p-1">{product.quantity}</span>
+                 <button
+                  onClick={() =>{
+                      if(product.quantity > 1 ){
+                       decrease(product.id)
+                      }
+                      else if(product.quantity === 1){
+                        removeProduct(product)
+                      }
+                    }}
+                  className="btn btn-light btn-ripple  btn-sm">
+                      -</button>
             </div>
         </div>
      );
