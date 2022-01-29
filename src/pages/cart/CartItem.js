@@ -27,18 +27,25 @@ const CartItem = ({product}) => {
                            <PlusCircleIcon width={"20px"}/>
                   </button>
                    <span className="p-1">{product.quantity}</span>
+                   {product.quantity > 1
+                &&
                  <button
-                  onClick={() =>{
-                      if(product.quantity > 1 ){
+                  onClick={() =>
                        decrease(product)
-                      }
-                      else if(product.quantity === 1){
-                        removeProduct(product)
-                      }
-                    }}
+                  }
                   className="btn btn-light btn-ripple  btn-sm">
                        -
-                      </button>
+                      </button>}
+                      {product.quantity === 1 
+                      
+                      &&
+                      <button
+                      onClick={() =>
+                           removeProduct(product)
+                      }
+                      className="btn btn-light btn-ripple  btn-sm">
+                           -
+                          </button>}
             </div>
         </div>
      );
