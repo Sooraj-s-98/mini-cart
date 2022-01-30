@@ -8,9 +8,8 @@ const Header = () => {
     const [showPopOver,setShowPopOver] = useState(false);
     return ( 
         <header className={`${styles.header} d-flex justify-content-center mx-5`}>
-            <div className="d-flex justify-content-between w-100">
-            <Link to='/'>Store</Link>
-            <Link to='/about'>About</Link>
+            <div className="d-flex justify-content-between d-flex align-items-center w-100">
+            <Link to='/'><h4>Store</h4></Link>
             <div className="d-flex">
             <Link to='/cart'><div className="d-flex flex-column "><span>${total}</span> <span>Items{" "}{itemCount}</span></div></Link>
             <span>
