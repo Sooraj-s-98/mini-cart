@@ -11,8 +11,11 @@ const PopOverCart = () => {
                         {cartItems.map(product =>
                             <div className={`row ${styles.poplist}`} key={product.id}>
                                 <div className=" col-2"> <span className="close " onClick={() => removeProduct(product)}>&times;</span> </div>
-                                <div className=" col-8"> <h6 className="" >{product.title}</h6> </div>
-                                 <div className=" col-2"> <span className="d-flex flex-column">Qty{" "}{product.quantity}</span> </div>
+                                <div className=" col-8"> 
+                                <h6  className={`${styles.title}`} >{product.title}</h6>
+                                <p className={`mb-1 ${styles.price}`}>${product.price}</p>   
+                                 </div>
+                                 <div className=" col-2"> <span className="row">Qty{" "}{product.quantity}</span> </div>
                             </div>)}
                     </div>
                 </div>
