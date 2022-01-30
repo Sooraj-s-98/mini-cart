@@ -23,6 +23,7 @@
     height: 100%;
     border-bottom: 1px solid #9fc0c8;
     overflow: hidden;
+    animation: flasher 0.5s;
   }
   li:poplist { border-bottom: none; }
   .title{
@@ -57,3 +58,12 @@
     align-items: center;
     cursor: pointer;
   }
+
+  @keyframes flasher{
+    from {
+       opacity: 0.2;
+    }
+    to {
+      opacity: 1;
+    }
+ }
