@@ -17,7 +17,7 @@ const PopOverCart = () => {
                                  </div>
                                  <div className=" col-2"> <span className="row">Qty{" "}{product.quantity}</span> </div>
                             </div>)}
-                            {cartItems.length === 0 && <div className="text-center">Your cart is empty</div>}
+                            {cartItems.length === 0 && <div className="text-center my-5">Your cart is empty</div>}
                     </div>
                 </div>
         </>
