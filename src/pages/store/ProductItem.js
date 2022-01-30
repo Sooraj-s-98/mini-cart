@@ -15,8 +15,8 @@ const ProductItem = ({product}) => {
     return ( 
         <div className="card card-body">
             <img style={{display: "block", margin: "0 auto 10px", maxHeight: "200px"}} className="img-fluid" 
-            src={product.image + '?v=' + product.id} alt=""/>
-            <p>{product.name}</p>
+            src={"http://placehold.it/400x300"} alt=""/>
+            <p>{product.title}</p>
             <h3 className="text-left">{formatNumber(product.price)}</h3>
             <div className="text-right">
                 <Link  to="/" className="btn btn-link btn-sm mr-2">Details</Link>

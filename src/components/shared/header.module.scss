@@ -1,14 +1,15 @@
 .header {
     padding: 10px;
     text-align: center;
+    border-bottom: solid;
+    border-bottom-color: #b3aeae;
+    border-bottom-width: 4px;
 
-    a {
-        display: inline-block;
-        margin-right: 10px;
-        padding: 5px 10px;
-        svg {
-            width: 18px;
-            margin-right: 5px;
-        }
-    }
+}
+
+.icon {
+    padding: 5px 10px;
+    margin-right: 5px;
+    width: auto;
+    height: 50px;
 }

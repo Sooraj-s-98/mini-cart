@@ -13,9 +13,7 @@ const Cart = () => {
     return ( 
         <Layout title="Cart" description="This is the Cart page" >
             <div >
-                <div className="text-center mt-5">
-                    <h1>Cart</h1>
-                    <p>This is the Cart Page.</p>
+                <div className="text-center mt-2">
                 </div>
 
                 <div className="row no-gutters justify-content-center">
